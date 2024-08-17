@@ -13,6 +13,9 @@ export default function NewsList({ news }: Props) {
   if (news.length === 0) {
     return <p>記事がありません。</p>;
   }
+
+  //                <Category category={article.category} />
+
   return (
     <ul>
       {news.map((article) => (
@@ -38,8 +41,8 @@ export default function NewsList({ news }: Props) {
             <dl className={styles.content}>
               <dt className={styles.title}>{article.title}</dt>
               <dd className={styles.meta}>
-                <Category category={article.category} />
-                <Date date={article.publishedAt ?? article.createdAt} />
+              <Category category={article.category} />
+              <Date date={article.publishedAt ?? article.createdAt} />
               </dd>
             </dl>
           </Link>

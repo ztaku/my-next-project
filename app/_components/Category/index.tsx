@@ -5,5 +5,10 @@ type Props = {
   category: Category;
 };
 export default function Category({ category }: Props) {
-  return <span className={styles.tag}>{category.name}</span>;
+//  console.log({category});
+  let name = "no category";
+  if (category !== null) {
+    name = category.name;
+  }
+  return <span className={styles.tag}>{name}</span>;
 }
